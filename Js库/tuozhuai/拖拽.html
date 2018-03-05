@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src = 'text.js'></script>
+	<style type="text/css">
+
+.box{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+}
+
+#heart {
+  position: relative;
+}
+#heart:before, #heart:after {
+  position: absolute;
+  content: "";
+  left: 70px; top: 0;
+  width: 70px;
+  height: 115px;
+  background: red;
+  border-radius: 50px 50px 0 0; 
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  filter: blur(2px);
+}
+#heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin :100% 100%;
+}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div id="heart"></div>
+	</div>
+		<div class="box">
+		<div id="heart"></div>
+	</div>	
+		<div class="box">
+		<div id="heart"></div>
+	</div>	
+	<div class="box">
+		<div id="heart"></div>
+	</div>
+	<div class="box">
+		<div id="heart"></div>
+	</div>	
+	<div class="box">
+		<div id="heart"></div>
+	</div>	
+	<div class="box">
+		<div id="heart"></div>
+	</div>	
+	<div class="box">
+		<div id="heart"></div>
+	</div>	
+	<div class="box">
+		<div id="heart"></div>
+	</div>	
+	<div class="box">
+		<div id="heart"></div>
+	</div>			
+</body>
+</html>
+<script type="text/javascript">
+window.onload = function(){
+let box = document.querySelectorAll('.box')
+// 	box.onmousedown = function(e){
+// 		let ox = e.offsetX,oy = e.offsetY
+// 		document.onmousemove =function(e){
+// 			let cx = e.clientX,cy = e.clientY
+// 			box.style.left = cx-ox+'px';
+// 			box.style.top = cy-ox+'px';
+// 		}
+// 	}
+// 	box.onmouseup = ()=>{
+// 		document.onmousemove = null
+// 	}
+// box.addEventListener('mousedown', function(e){
+// 	let ox = e.offsetX,oy = e.offsetY
+// 	document.addEventListener('mousemove', move)
+// 		box.addEventListener('mouseup',function(){
+// 			document.removeEventListener('mousemove', move)
+// 		}, )
+	
+// 	function move(e){
+// 			let cx = e.clientX,cy = e.clientY
+// 			box.style.left = cx-ox+'px';
+// 			box.style.top = cy-ox+'px';
+// 	}
+// }, )
+// 
+box.forEach(element =>{
+	let aa = new drag(element)
+	aa.move()
+})
+}
+</script>

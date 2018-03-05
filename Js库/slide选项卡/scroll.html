@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='animate.js'></script>
+	<script src="scroll.js"></script>
+</head>
+<body>
+<div class='head'>这是头部</div>
+	<ul class="floor">
+		<li><img imgPath="banner1.jpg" alt=""></li>
+		<li><img imgPath="banner2.jpg" alt=""></li>
+		<li><img imgPath="banner3.jpg" alt=""></li>
+		<li><img imgPath="banner4.jpg" alt=""></li>
+		<li><img imgPath="banner1.jpg" alt=""></li>
+	</ul>
+
+	<ul class="floor">
+		<li><img imgPath="banner1.jpg" alt=""></li>
+		<li><img imgPath="banner2.jpg" alt=""></li>
+		<li><img imgPath="banner3.jpg" alt=""></li>
+		<li><img imgPath="banner4.jpg" alt=""></li>
+		<li><img imgPath="banner1.jpg" alt=""></li>
+	</ul>
+
+	<ul class="floor">
+		<li><img imgPath="banner1.jpg" alt=""></li>
+		<li><img imgPath="banner2.jpg" alt=""></li>
+		<li><img imgPath="banner3.jpg" alt=""></li>
+		<li><img imgPath="banner4.jpg" alt=""></li>
+		<li><img imgPath="banner1.jpg" alt=""></li>
+	</ul>
+
+	<ul class="floor">
+		<li><img imgPath="banner1.jpg" alt=""></li>
+		<li><img imgPath="banner2.jpg" alt=""></li>
+		<li><img imgPath="banner3.jpg" alt=""></li>
+		<li><img imgPath="banner4.jpg" alt=""></li>
+		<li><img imgPath="banner1.jpg" alt=""></li>
+	</ul>
+
+	<ul class="floor">
+		<li><img imgPath="banner1.jpg" alt=""></li>
+		<li><img imgPath="banner2.jpg" alt=""></li>
+		<li><img imgPath="banner3.jpg" alt=""></li>
+		<li><img imgPath="banner4.jpg" alt=""></li>
+		<li><img imgPath="banner1.jpg" alt=""></li>
+	</ul>
+	<ul class="sli">
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+<div class="footer">这是底部</div>
+<!-- 搜索框 -->
+<div class="serach"></div>
+<!-- 回到顶部 -->
+<div class="totop">TOP</div>
+</body>
+</html>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+		list-style: none;
+	}
+	.totop{
+		width: 80px;
+		height: 50px;
+		background: #ff6700;
+		position: fixed;
+		right: -90px;
+		top:300px;
+		font-size: 40px;
+		text-align: center;
+		line-height: 50px;
+		color: #fff;
+		cursor: pointer;
+	}
+	.floor{
+		width: 1000px;
+		height: 1000px;
+		margin: 50px auto;
+		background: #ff6700;
+	}
+	.footer,.head{
+		width: 1000px;
+		height: 100px;
+		margin: 0 auto;
+		background: lightgray;
+		line-height: 100px;
+		text-align: center;
+	}
+	li{
+		width: 100%;
+		height: 20%;
+		background: seagreen;
+	}
+	li img{
+		width: 100%;
+		height: 100%;
+	}
+	.sli{
+		width: 50px;
+		height: 250px;
+		position: fixed;
+		left: -70px;
+		top: 200px;
+	}
+	.sli li{
+		width: 50px;
+		height: 50px;
+		text-align: center;
+		line-height: 50px;
+		cursor: pointer;
+		color: #fff
+	}
+	.active{
+		background: #ff6700;
+	}
+	.serach{
+		width: 100%;
+		height: 50px;
+		background: #ff6700;
+		position: fixed;
+		top: -50px;
+		left: 0;
+	}
+</style>
+<!-- <script>
+	window.onscroll=function(){                           
+		console.log(document.body.scrollTop);
+	}
+</script> -->
+<!-- 浏览器高度+滚动条的距离>元素到页面左上角的高度//
+       innerHeight  document.body.scrollTop    obj.offsetTop -->

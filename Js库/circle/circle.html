@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='function.js'></script>
+</head>
+<body>
+	<div class="point"></div>
+</body>
+<style>
+	.point{
+		width: 1px;
+		height: 1px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	.circle{
+		width: 10px;
+		height: 10px;
+		background: seagreen;
+		border-radius: 50%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transition: .5s
+	}
+</style>
+<script>
+	/*
+	角度转弧度：rad = deg*（PI/180）
+	lefts=r*Math.cos(degs)
+	tops=r*Math.sin(degs)
+	 */
+	$(function(){
+		let point=document.querySelector('div.point')
+		const bili=Math.PI/180
+		let r=100,num=360,t=100,every=60
+		let deg=360/every
+		for(let i=0;i<num;i++){
+			if(i%60==0){
+				r+=30
+				t+=1000
+			}
+			let  divs=document.createElement('div')
+			let degs=i*deg*bili
+			let lefts=r*Math.cos(degs)
+			let tops=r*Math.sin(degs)
+			divs.classList.add('circle')
+			point.appendChild(divs)
+			// t += 20                     //每个延迟都不一样
+			divs.style.transitionDelay=`${t}ms`       //延迟时间
+			  
+			setTimeout(()=>{
+				divs.style.top=`${tops}px`;
+				divs.style.left=`${lefts}px`;
+			},100)
+
+
+		}
+	})
+</script> 

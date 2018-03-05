@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		canvas{
+			border: 1px solid gray;
+		}
+	</style>
+	<body>
+		<canvas></canvas>
+	</body>
+</html>
+<script>
+	let canvas=document.querySelector('canvas')
+	let ctx=canvas.getContext('2d')
+	ctx.lineCap="round"
+	ctx.lineWidth=10
+	ctx.beginPath()
+	ctx.moveTo(20,20)
+	ctx.lineTo( 20,120)
+	
+	ctx.stroke()
+//	ctx.closePath()
+	
+	
+	
+</script>

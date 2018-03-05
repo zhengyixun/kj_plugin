@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		canvas{
+			border: 1px solid gray;
+		}
+	</style>
+	<body>
+		<canvas width="1330" height="600"></canvas>
+	</body>
+</html>
+<script>
+	window.onload=function(){
+		let canvas=document.querySelector('canvas')
+		let ctx=canvas.getContext('2d')
+		let data=[]
+		
+		
+		//直线
+		document.onmousedown=function(e){
+			let ox=e.offsetX,oy=e.offsetY
+			document.onmousemove=function(e){
+				let cx=e.offsetX,cy=e.offsetY;
+				ctx.clearRect(0,0,canvas.width,canvas.height)
+				
+				if(data.length>0){
+					ctx.putImageData(data[data.length-1],0,0)
+				}
+				
+				ctx.beginPath()
+				ctx.moveTo(ox,oy)
+				ctx.lineTo(cx,cy)
+				ctx.closePath()
+				ctx.stroke()	
+			}
+			document.onmouseup=function(){
+				data.push(ctx.getImageData(0,0,canvas.width,canvas.height))//放到数组里
+				document.onmousemove=null
+				document.onmouseup=null
+			}
+			document.onkeydown=function(e){   //撤销 Ctrl+Z
+				if(e.ctrlKey&&e.keyCode==90){
+					let img=data.pop()   //删除最后一步
+					ctx.putImageData(data[data.length-1],0,0)  //放到canvas中
+				}
+			}
+		}
+
+
+		//铅笔
+//		document.onmousedown=function(e){
+//			let ox=e.offsetX,oy=e.offsetY
+//			ctx.beginPath()
+//			ctx.moveTo(ox,oy)
+//			document.onmousemove=function(e){
+//				let cx=e.offsetX,cy=e.offsetY;
+//				ctx.lineTo(cx,cy)
+////				ctx.closePath()
+//				ctx.stroke()
+//			}
+//			document.onmouseup=function(){
+//				document.onmousemove=null
+//				document.onmouseup=null
+//			}
+//		}
+		
+		
+		
+	}
+</script>

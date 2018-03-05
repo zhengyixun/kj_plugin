@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="drag.js"></script>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>
+<style>
+	.box{
+		width: 100px;
+		height: 100px;
+		background: #000;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+</style>
+<script>
+	window.onload=function(){
+		let box = document.querySelector('.box')
+		let a=new drag(box)
+		a.move()
+	}
+</script>
